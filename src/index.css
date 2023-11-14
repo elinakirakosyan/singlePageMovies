@@ -1,13 +1,221 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-wrapper {
+  display: flex;
+}
+
+.navbar-container {
+  position: fixed;
+  z-index: 111;
+  transition: 0.3s ease-in-out;
+  height: 100vh;
+  background-color: #000;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: baseline;
+  color: #fff;
+}
+
+.shrink-animation {
+  animation-name: reverse-floating;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  z-index: 8000;
+}
+
+.navbar-container:hover {
+  animation-name: floating;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.navbar-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  padding: 4px 8px;
+}
+
+.navbar-item:hover {
+  background-color: #3d4e7f;
+  border-radius: 4px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.setting-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 70%;
+  line-height: 25px;
+  font-size: 17px;
+  color: #c0bfbf;
+  font-weight: 600;
+}
+
+.setting-block > span {
+  cursor: pointer;
+}
+
+.main-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  position: fixed;
+  top: 15%;
+  left: 120px;
+  gap: 15px;
+  z-index: 12;
+}
+
+.titleImage {
+  max-width: 65%;
+}
+
+.btn-block {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: 600;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.more {
+  background-color: #2453d9;
+  color: #fff;
+}
+
+.btn > img {
+  width: 20px;
+  height: 17px;
+}
+
+@keyframes floating {
+  0% {
+    width: 100px;
+  }
+  100% {
+    width: 250px;
+  }
+}
+
+@keyframes reverse-floating {
+  0% {
+    width: 250px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+.slider-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 120px;
+  width: 100%;
+  color: #fff;
+  z-index: 11;
+}
+
+.body-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.body-wrapper video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh !important;
+}
+
+.gradient-body-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.slider-img {
+  padding: 0 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.slick-slide {
+  width: 95%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+.content-overlay {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.navbar-inner {
+  display: flex;
+  flex-direction: column;
+  margin: 80px auto 0;
+}
+
+.menuItems-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-self: center;
 }
